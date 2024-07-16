@@ -11,6 +11,7 @@ public class TransacaoNaoAutorizada extends PicPayExcecao {
 	@Override
 	public ProblemDetail toProblemDetail() {
 		var pb = ProblemDetail.forStatus(HttpStatus.FORBIDDEN);
+		pb.setTitle("Transação não autorizada");
 		return pb;
 	}
 	

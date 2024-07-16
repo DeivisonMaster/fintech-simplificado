@@ -48,4 +48,8 @@ public class Usuario {
 	@Enumerated(EnumType.STRING)
 	private TipoUsuario tipoUsuario;
 
+	public boolean isTransferenciaPermitida() {
+		return this.tipoUsuario.equals(TipoUsuario.COMUM);
+	}
+
 }

@@ -41,4 +41,8 @@ public class Carteira {
 	public void credito(BigDecimal valor) {
 		this.saldo = this.saldo.add(valor);
 	}
+
+	public boolean isSaldoSuficiente(BigDecimal valor) {
+		return this.saldo.compareTo(valor) < 0;
+	}
 }
