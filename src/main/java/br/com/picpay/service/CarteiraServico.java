@@ -1,6 +1,7 @@
 package br.com.picpay.service;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,10 @@ public class CarteiraServico {
 		carteira.setUsuario(usuarioSalvo);
 
 		carteiraRepositorio.save(carteira);
+	}
+
+	public Optional<Carteira> buscaCarteiraAssociadaAoUsuario(Long id) {
+		return carteiraRepositorio.buscaCarteiraPorIdUsuario(id);
 	}
 
 }

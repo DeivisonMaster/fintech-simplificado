@@ -33,4 +33,12 @@ public class Carteira {
 	@ManyToOne
 	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
+
+	public void debito(BigDecimal valor) {
+		this.saldo = this.saldo.subtract(valor);
+	}
+
+	public void credito(BigDecimal valor) {
+		this.saldo = this.saldo.add(valor);
+	}
 }
