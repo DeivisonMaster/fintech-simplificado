@@ -10,7 +10,7 @@ public class SaldoInsuficiente extends PicPayExcecao {
 	
 	@Override
 	public ProblemDetail toProblemDetail() {
-		var pb = ProblemDetail.forStatus(HttpStatus.FORBIDDEN);
+		var pb = ProblemDetail.forStatus(HttpStatus.UNPROCESSABLE_ENTITY);
 		pb.setTitle("Saldo insuficiente para realizar a transação");
 		return pb;
 	}

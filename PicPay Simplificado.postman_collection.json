@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "b2f92e56-a8db-4b46-9606-68311a974917",
+		"name": "PicPay Simplificado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7129537"
+	},
+	"item": [
+		{
+			"name": "Novo Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"maria\",\r\n    \"sobreNome\": \"martins\",\r\n    \"cpf\": 1234,\r\n    \"cnpj\": \"\",\r\n    \"email\": \"maria@email.com\",\r\n    \"senha\": \"123\",\r\n    \"tipoUsuario\": \"comum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transferencia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"valor\": 15,\r\n    \"idPagador\": 2,\r\n    \"idRecebedor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transacoes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transacoes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
