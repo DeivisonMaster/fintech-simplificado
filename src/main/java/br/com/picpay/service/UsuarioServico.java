@@ -21,9 +21,9 @@ public class UsuarioServico {
 	private CarteiraServico carteiraServico;
 
 	public Usuario novo(UsuarioDTO usuarioDTO) {
-		Optional<Usuario> usuarioPesquisa = usuarioRepositorio.findByCpfOrCnpjOrEmail(usuarioDTO.cpf(), usuarioDTO.cnpj(), usuarioDTO.email());
+		Optional<Usuario> usuarioPesquisa = usuarioRepositorio.findByCpfOrEmail(usuarioDTO.cpf(), usuarioDTO.email());
 		if(usuarioPesquisa.isPresent()) {
-			throw new DadosUnicosExistentesExcecao("CPF/CNPJ ou Email já estão cadastrados no sistema!");
+			throw new DadosUnicosExistentesExcecao("CPF ou e-mail já estão cadastrados no sistema!");
 		}
 		
 		Usuario usuario = new Usuario();
@@ -40,6 +40,10 @@ public class UsuarioServico {
 		carteiraServico.novaCarteira(usuarioSalvo);
 		
 		return usuarioSalvo;
+	}
+	
+	public Optional<Usuario> buscaPorId(Long id) {
+		return usuarioRepositorio.findById(id);
 	}
 	
 	

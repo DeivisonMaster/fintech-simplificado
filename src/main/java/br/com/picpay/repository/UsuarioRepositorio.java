@@ -10,6 +10,6 @@ import br.com.picpay.model.Usuario;
 @Repository
 public interface UsuarioRepositorio extends JpaRepository<Usuario, Long>{
 
-	Optional<Usuario> findByCpfOrCnpjOrEmail(String cpf, String cnpj, String email);
+	Optional<Usuario> findByCpfOrEmail(String cpf, String email);
 
 }

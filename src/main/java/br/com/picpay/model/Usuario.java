@@ -47,4 +47,5 @@ public class Usuario {
 	@Column(name = "tipo_usuario")
 	@Enumerated(EnumType.STRING)
 	private TipoUsuario tipoUsuario;
+
 }
