@@ -1,4 +1,4 @@
-# API Spring Boot de E-mails
+# API PicPay Simplificado
 
 **API Spring Boot 3.x PicPay Simplificado**
 
